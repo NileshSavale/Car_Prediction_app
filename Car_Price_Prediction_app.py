@@ -17,7 +17,7 @@ app=Flask(__name__)
 model=pickle.load(open('LinearRegressionModel.pkl','rb'))
 car=pd.read_csv('Cleaned_Car_Data.csv')
 
-@app.route("/")
+@app.route("/",methods=['POST','GET'])
 def index():
     companies=sorted(car['company'].unique())
     car_models=sorted(car['name'].unique())
